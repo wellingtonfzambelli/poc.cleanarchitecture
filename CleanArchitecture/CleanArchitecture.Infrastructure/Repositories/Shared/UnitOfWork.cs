@@ -9,6 +9,6 @@ public sealed class UnitOfWork : IUnitOfWork
     public UnitOfWork(AppDbContext context) =>
         _context = context;
 
-    public async Task CommitAsync(CancellationToken cancellationToken) =>
+    public async Task SaveChangesAsync(CancellationToken cancellationToken) =>
         await _context.SaveChangesAsync(cancellationToken);
 }

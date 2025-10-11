@@ -1,15 +1,32 @@
+using CleanArchitecutre.Presentation.Api.Configuration;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddHttpContextAccessor();
+
+string _path = builder.Environment.ContentRootPath;
+IConfiguration _configuration = builder.Configuration;
+
+builder.Services.AddSqliteDatabase(builder.Configuration);
+//builder.Services.AddSqlServerDatabase(builder.Configuration);
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddSwaggerConfiguration();
+builder.Services.AddDependencyInjectionConfiguration();
+builder.Services.AddClientConfiguration(_configuration);
+builder.Services.AddRabbitConfiguration(_configuration);
+builder.Services.AddRedisConfiguration(_configuration);
+//builder.Services.AddHealthCheckConfiguration(_configuration);
+builder.Services.AddRateLimitConfiguration(_configuration);
+builder.Services.AddCorsConfiguration(_configuration);
+builder.AddSerilogConfiguration(_path, _configuration);
+builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -17,9 +34,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+//app.UseCors(CORS_POLICY);
 app.UseAuthorization();
-
+//app.UseAuthentication();
 app.MapControllers();
-
 app.Run();

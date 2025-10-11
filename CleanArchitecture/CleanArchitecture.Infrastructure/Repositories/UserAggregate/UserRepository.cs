@@ -7,7 +7,7 @@ namespace CleanArchitecture.Infrastructure.Repositories.UserAggregate;
 
 public sealed class UserRepository : BaseRepository<User>, IUserRepository
 {
-    public UserRepository(AppDbContext context) : base(context)
+    public UserRepository(CleanArchitectureDbContext context) : base(context)
     { }
 
     public async Task<User?> GetByEmailAsync(string email, CancellationToken cancellationToken) =>

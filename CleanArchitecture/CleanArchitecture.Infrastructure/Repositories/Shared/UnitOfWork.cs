@@ -1,14 +1,39 @@
-﻿using CleanArchitecture.Domain.Shared;
+﻿using CleanArchitecture.Domain.Entities.UserAggregate;
+using CleanArchitecture.Domain.Shared;
 using CleanArchitecture.Infrastructure.Context;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace CleanArchitecture.Infrastructure.Repositories.Shared;
 
 public sealed class UnitOfWork : IUnitOfWork
 {
-    private readonly AppDbContext _context;
-    public UnitOfWork(AppDbContext context) =>
-        _context = context;
+    public IUserRepository UserRepository { get; }
 
-    public async Task SaveChangesAsync(CancellationToken cancellationToken) =>
-        await _context.SaveChangesAsync(cancellationToken);
+    private readonly CleanArchitectureDbContext _context;
+    private IDbContextTransaction _transaction;
+
+    public UnitOfWork
+    (
+        CleanArchitectureDbContext context,
+        IUserRepository userRepository
+    )
+    {
+        UserRepository = userRepository;
+        _context = context;
+    }
+
+    public async Task OpenTransactionAsync(CancellationToken ct) =>
+        _transaction = await _context.Database.BeginTransactionAsync(ct);
+
+    public async Task CommitTransaction(CancellationToken cancellationToken) =>
+        await _transaction.CommitAsync(cancellationToken);
+
+    public async Task RollBackTransaction(CancellationToken cancellationToken) =>
+        await _transaction.RollbackAsync(cancellationToken);
+
+    public async Task SaveAsync(CancellationToken ct) =>
+        await _context.SaveChangesAsync(ct);
+
+    public async Task DisposeAsync() =>
+        await _context.DisposeAsync();
 }

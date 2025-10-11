@@ -14,11 +14,11 @@ public static class ServiceExtensions
     public static void AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
     {
         var connectionString = configuration.GetConnectionString("DefaultConnection");
-        services.AddDbContext<AppDbContext>(options =>
+        services.AddDbContext<CleanArchitectureDbContext>(options =>
             options.UseSqlServer(connectionString));
 
         // Add repositories
         services.AddScoped<IUserRepository, UserRepository>();
-        services.AddScoped<IUnitOfWork, UnitOfWork>();        
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
     }
 }

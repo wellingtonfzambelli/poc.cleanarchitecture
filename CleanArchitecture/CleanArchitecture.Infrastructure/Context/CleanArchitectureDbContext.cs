@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CleanArchitecture.Infrastructure.Context;
 
-public sealed class AppDbContext : DbContext
+public sealed class CleanArchitectureDbContext : DbContext
 {
-    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+    public CleanArchitectureDbContext(DbContextOptions<CleanArchitectureDbContext> options) : base(options)
     { }
 
     public DbSet<User> Users { get; set; }

@@ -6,9 +6,9 @@ namespace CleanArchitecture.Infrastructure.Repositories.Shared;
 
 public abstract class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity
 {
-    protected readonly AppDbContext Context;
+    protected readonly CleanArchitectureDbContext Context;
 
-    public BaseRepository(AppDbContext context) =>
+    public BaseRepository(CleanArchitectureDbContext context) =>
         Context = context;
 
     public async Task<T?> GetByIdAsync(Guid id, CancellationToken cancellationToken) =>

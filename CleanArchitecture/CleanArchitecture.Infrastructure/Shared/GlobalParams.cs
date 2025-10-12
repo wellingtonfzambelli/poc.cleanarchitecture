@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 
-namespace CleanArchitecture.Infrastructure.Configuration;
+namespace CleanArchitecture.Infrastructure.Shared;
 
 public static class GlobalParams
 {

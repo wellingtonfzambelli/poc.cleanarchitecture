@@ -1,5 +1,5 @@
-﻿using CleanArchitecture.Infrastructure.Configuration;
-using CleanArchitecture.Infrastructure.Context;
+﻿using CleanArchitecture.Infrastructure.Context;
+using CleanArchitecture.Infrastructure.Shared;
 using Microsoft.EntityFrameworkCore;
 
 namespace CleanArchitecutre.Presentation.Api.Configuration;

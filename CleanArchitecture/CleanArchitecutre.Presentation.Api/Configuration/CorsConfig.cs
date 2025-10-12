@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Infrastructure.Configuration;
+﻿using CleanArchitecture.Infrastructure.Shared;
 
 namespace CleanArchitecutre.Presentation.Api.Configuration;
 

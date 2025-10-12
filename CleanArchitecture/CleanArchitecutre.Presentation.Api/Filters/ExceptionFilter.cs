@@ -1,5 +1,5 @@
 ﻿using CleanArchitecture.Application.Shared;
-using CleanArchitecture.Infrastructure.Configuration;
+using CleanArchitecture.Infrastructure.Shared;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System.Net;

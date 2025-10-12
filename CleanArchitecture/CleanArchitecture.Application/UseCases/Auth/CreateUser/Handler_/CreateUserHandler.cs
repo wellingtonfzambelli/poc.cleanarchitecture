@@ -3,7 +3,7 @@ using CleanArchitecture.Domain.Entities.UserAggregate;
 using CleanArchitecture.Domain.Shared;
 using CleanArchitecture.Infrastructure.Cache;
 using CleanArchitecture.Infrastructure.Cache.Model;
-using CleanArchitecture.Infrastructure.Configuration;
+using CleanArchitecture.Infrastructure.Shared;
 using MediatR;
 using Microsoft.Extensions.Logging;
 

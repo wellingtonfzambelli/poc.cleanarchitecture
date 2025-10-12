@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Infrastructure.Configuration;
+﻿using CleanArchitecture.Infrastructure.Shared;
 using Redis.OM;
 
 namespace CleanArchitecutre.Presentation.Api.Configuration;

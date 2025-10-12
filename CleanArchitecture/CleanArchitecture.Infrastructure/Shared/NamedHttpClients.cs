@@ -1,4 +1,4 @@
-﻿namespace CleanArchitecture.Infrastructure.Configuration;
+﻿namespace CleanArchitecture.Infrastructure.Shared;
 
 public static class NamedHttpClients
 {

@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Infrastructure.Configuration;
+﻿using CleanArchitecture.Infrastructure.Shared;
 using Microsoft.AspNetCore.RateLimiting;
 using System.Threading.RateLimiting;
 

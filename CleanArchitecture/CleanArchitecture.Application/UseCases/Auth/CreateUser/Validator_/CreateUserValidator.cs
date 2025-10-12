@@ -2,7 +2,7 @@
 
 namespace CleanArchitecture.Application.UseCases.Auth.CreateUser;
 
-public sealed class CreateUserValidator : AbstractValidator<CreateUserHandlerRequestDto>
+public sealed class CreateUserValidator : AbstractValidator<CreateUserCommandDto>
 {
     public CreateUserValidator()
     {

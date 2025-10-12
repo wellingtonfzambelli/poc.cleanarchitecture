@@ -1,7 +1,8 @@
-﻿namespace CleanArchitecture.Application.Shared;
+﻿using Microsoft.AspNetCore.Mvc;
 
-public sealed class BadRequestDto
+namespace CleanArchitecture.Application.Shared;
+
+public sealed class BadRequestDto : ProblemDetails
 {
-    public string Code { get; set; }
-    public string Message { get; set; }
+    public IList<ErrorResponseDto> Errors { get; set; } = new List<ErrorResponseDto>();
 }

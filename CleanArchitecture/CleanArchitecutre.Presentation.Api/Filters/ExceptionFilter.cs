@@ -19,26 +19,35 @@ internal sealed class ExceptionFilter : IExceptionFilter
 
     public void OnException(ExceptionContext context)
     {
-        var correlationId = _httpContextAccessor?.HttpContext?.Request.Headers["track-id"].ToString();
+        var correlationId = _httpContextAccessor?.HttpContext?.Request.Headers["correlation-id"].ToString();
 
-        if (correlationId is null)
+        if (string.IsNullOrWhiteSpace(correlationId))
             correlationId = Guid.NewGuid().ToString();
 
-        var response = context.HttpContext.Response;
+        var exception = context.Exception;
 
-        response.StatusCode = (int)HttpStatusCode.BadRequest;
-        response.ContentType = "application/json";
-        context.ExceptionHandled = true;
-        context.Result = new BadRequestObjectResult(
-            new[]
+        var problemDetails = new BadRequestDto
+        {
+            Type = "https://datatracker.ietf.org/doc/html/rfc7807",
+            Title = MessageValidation.GeneralError.Description,
+            Detail = exception.Message,
+            Status = (int)HttpStatusCode.BadRequest,
+            Instance = context.HttpContext.Request.Path,
+            Errors = new List<ErrorResponseDto>
             {
-                new BadRequestDto
-                {
-                    Code = MessageValidation.GeneralError.code,
-                    Message = MessageValidation.GeneralError.description
-                }
-            });
+                new ErrorResponseDto
+                (
+                    MessageValidation.GeneralError.Code,
+                    MessageValidation.GeneralError.Description
+                )
+            },
+        };
 
-        _logger.LogError(context.Exception, null);
+        context.Result = new ObjectResult(problemDetails)
+        {
+            StatusCode = problemDetails.Status
+        };
+
+        context.ExceptionHandled = true;
     }
 }

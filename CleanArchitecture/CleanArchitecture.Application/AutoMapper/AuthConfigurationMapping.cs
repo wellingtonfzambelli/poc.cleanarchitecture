@@ -7,13 +7,13 @@ public sealed class AuthConfigurationMapping : Profile
 {
     public AuthConfigurationMapping()
     {
-        CreateMap<CreateUserRequestDto, CreateUserHandlerRequestDto>()
+        CreateMap<CreateUserRequestDto, CreateUserCommandDto>()
            .ForMember(dest => dest.FirstName, opt => opt.MapFrom(src => src.FirstName))
            .ForMember(dest => dest.LastName, opt => opt.MapFrom(src => src.LastName))
            .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
            .ForMember(dest => dest.Password, opt => opt.MapFrom(src => src.Password));
 
-        CreateMap<CreateUserHandlerRequestDto, CreateUserRequestDto>()
+        CreateMap<CreateUserCommandDto, CreateUserRequestDto>()
             .ForMember(dest => dest.FirstName, opt => opt.MapFrom(src => src.FirstName))
             .ForMember(dest => dest.LastName, opt => opt.MapFrom(src => src.LastName))
             .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))

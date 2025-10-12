@@ -2,7 +2,7 @@
 
 namespace CleanArchitecture.Application.UseCases.Auth.CreateUser;
 
-public sealed record CreateUserHandlerRequestDto : IRequest<CreateUserHandlerResponseDto>
+public sealed record CreateUserCommandDto : IRequest<CreateUserCommandResponseDto>
 {
     public string FirstName { get; set; }
     public string LastName { get; set; }

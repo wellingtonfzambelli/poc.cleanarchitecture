@@ -2,7 +2,7 @@
 
 namespace CleanArchitecture.Application.UseCases.Auth.CreateUser;
 
-public sealed class CreateUserHandlerResponseDto : BaseResponseDto
+public sealed class CreateUserCommandResponseDto : ErrorBaseResponseDto
 {
     public Guid Id { get; set; }
     public string Name { get; set; }

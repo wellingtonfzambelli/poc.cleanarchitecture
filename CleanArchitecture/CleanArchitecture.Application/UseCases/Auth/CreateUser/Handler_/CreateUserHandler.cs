@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 
 namespace CleanArchitecture.Application.UseCases.Auth.CreateUser;
 
-public sealed class CreateUserHandler : IRequestHandler<CreateUserHandlerRequestDto, CreateUserHandlerResponseDto>
+public sealed class CreateUserHandler : IRequestHandler<CreateUserCommandDto, CreateUserCommandResponseDto>
 {
     private readonly ICacheService _cacheService;
     private readonly IUnitOfWork _unitOfWork;
@@ -22,22 +22,22 @@ public sealed class CreateUserHandler : IRequestHandler<CreateUserHandlerRequest
         _logger = logger;
     }
 
-    public async Task<CreateUserHandlerResponseDto> Handle(CreateUserHandlerRequestDto request, CancellationToken cancellationToken)
+    public async Task<CreateUserCommandResponseDto> Handle(CreateUserCommandDto request, CancellationToken cancellationToken)
     {
         _logger.LogInformation("starting handle method");
 
-        var response = new CreateUserHandlerResponseDto();
+        var response = new CreateUserCommandResponseDto();
 
         if (_cacheService.GetByIdAsync<User>(request.Email).Result is not null)
         {
-            response.SetError(new ErrorResponse(
-                MessageValidation.NoDataFound.code,
-                MessageValidation.NoDataFound.description
+            response.SetError(new ErrorResponseDto(
+                MessageValidation.NoDataFound.Code,
+                MessageValidation.NoDataFound.Description
             ));
             return response;
         }
 
-        var user = new User("", "");
+        var user = new User(request.FirstName, request.Email);
         await _unitOfWork.UserRepository.AddAsync(user, cancellationToken);
         await _unitOfWork.SaveAsync(cancellationToken);
 

@@ -23,6 +23,6 @@ public static class DependencyInjectionConfig
         services.AddScoped<IUnitOfWork, UnitOfWork>();
         services.AddScoped<ICacheService, CacheService>();
 
-        services.AddScoped<IRequestHandler<CreateUserHandlerRequestDto, CreateUserHandlerResponseDto>, CreateUserHandler>();
+        services.AddScoped<IRequestHandler<CreateUserCommandDto, CreateUserCommandResponseDto>, CreateUserHandler>();
     }
 }

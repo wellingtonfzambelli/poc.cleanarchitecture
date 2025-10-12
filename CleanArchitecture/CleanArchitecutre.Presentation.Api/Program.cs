@@ -1,3 +1,6 @@
+using CleanArchitecture.Application.DI;
+using CleanArchitecture.Infrastructure.DI;
+using CleanArchitecutre.Presentation.Api.DI;
 using CleanArchitecutre.Presentation.Api.DI.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +9,10 @@ builder.Services.AddHttpContextAccessor();
 
 string _path = builder.Environment.ContentRootPath;
 IConfiguration _configuration = builder.Configuration;
+
+builder.Services.AddApplicationServices(_configuration);
+builder.Services.AddInfrastructureServices(_configuration);
+builder.Services.AddPresentationServices(_configuration);
 
 builder.Services.AddSqliteDatabase(builder.Configuration);
 //builder.Services.AddSqlServerDatabase(builder.Configuration);

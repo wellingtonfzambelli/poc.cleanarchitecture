@@ -1,4 +1,7 @@
-﻿namespace CleanArchitecutre.Presentation.Api.DI.Configuration;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+
+namespace CleanArchitecture.Infrastructure.DI.Configuration;
 
 public static class RabbitConfig
 {

@@ -24,7 +24,7 @@ public sealed class CreateUserHandler : IRequestHandler<CreateUserCommandDto, Cr
 
     public async Task<CreateUserCommandResponseDto> Handle(CreateUserCommandDto request, CancellationToken cancellationToken)
     {
-        _logger.LogInformation("starting handle method");
+        _logger.LogWarning("starting handle method");
 
         var response = new CreateUserCommandResponseDto();
 

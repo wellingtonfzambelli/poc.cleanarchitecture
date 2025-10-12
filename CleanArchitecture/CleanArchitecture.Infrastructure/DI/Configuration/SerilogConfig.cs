@@ -1,13 +1,16 @@
-﻿using Serilog;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
+using Serilog;
 using Serilog.Events;
 
 namespace CleanArchitecutre.Presentation.Api.DI.Configuration;
 
 public static class SerilogConfig
 {
-    public static void AddSerilogConfiguration(this WebApplicationBuilder builder, string path, IConfiguration config) =>
-        builder.Host.UseSerilog((context, configuration) =>
-            configuration.ReadFrom.Configuration(context.Configuration)
+    public static void AddSerilogConfiguration(this IHostBuilder hostBuilder, string path, IConfiguration config) =>
+        hostBuilder.UseSerilog((context, configuration) =>
+        configuration.ReadFrom.Configuration(context.Configuration)
+
             .MinimumLevel.Warning()
             .MinimumLevel.Override("Microsoft", LogEventLevel.Error)
             .MinimumLevel.Override("System", LogEventLevel.Error)

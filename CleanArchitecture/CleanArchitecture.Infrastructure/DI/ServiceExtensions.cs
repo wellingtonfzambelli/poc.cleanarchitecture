@@ -1,9 +1,4 @@
-﻿using CleanArchitecture.Domain.Entities.UserAggregate;
-using CleanArchitecture.Domain.Shared;
-using CleanArchitecture.Infrastructure.Context;
-using CleanArchitecture.Infrastructure.Repositories.Shared;
-using CleanArchitecture.Infrastructure.Repositories.UserAggregate;
-using Microsoft.EntityFrameworkCore;
+﻿using CleanArchitecture.Infrastructure.DI.Configuration;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -13,12 +8,8 @@ public static class ServiceExtensions
 {
     public static void AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
     {
-        var connectionString = configuration.GetConnectionString("DefaultConnection");
-        services.AddDbContext<CleanArchitectureDbContext>(options =>
-            options.UseSqlServer(connectionString));
-
-        // Add repositories
-        services.AddScoped<IUserRepository, UserRepository>();
-        services.AddScoped<IUnitOfWork, UnitOfWork>();
+        services.AddSqliteDatabase(configuration);        
+        services.AddRedisConfiguration(configuration);
+        services.AddPersistenceServices(configuration);
     }
 }

@@ -1,10 +1,12 @@
 ﻿using CleanArchitecture.Infrastructure.Context;
 using CleanArchitecture.Infrastructure.Shared;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace CleanArchitecutre.Presentation.Api.DI.Configuration;
+namespace CleanArchitecture.Infrastructure.DI.Configuration;
 
-public static class DataBaseConfig
+public static class SqlDatabaseConfig
 {
     public static void AddSqlServerDatabase(this IServiceCollection services, IConfiguration config)
     {

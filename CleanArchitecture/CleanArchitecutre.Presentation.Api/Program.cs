@@ -14,14 +14,11 @@ builder.Services.AddApplicationServices(_configuration);
 builder.Services.AddInfrastructureServices(_configuration);
 builder.Services.AddPresentationServices(_configuration);
 
-builder.Services.AddSqliteDatabase(builder.Configuration);
-//builder.Services.AddSqlServerDatabase(builder.Configuration);
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddSwaggerConfiguration();
 builder.Services.AddDependencyInjectionConfiguration();
 builder.Services.AddClientConfiguration(_configuration);
 builder.Services.AddRabbitConfiguration(_configuration);
-builder.Services.AddRedisConfiguration(_configuration);
 //builder.Services.AddHealthCheckConfiguration(_configuration);
 builder.Services.AddRateLimitConfiguration(_configuration);
 builder.Services.AddCorsConfiguration(_configuration);

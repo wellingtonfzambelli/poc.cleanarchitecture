@@ -1,9 +1,11 @@
 ﻿using CleanArchitecture.Infrastructure.Shared;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Redis.OM;
 
-namespace CleanArchitecutre.Presentation.Api.DI.Configuration;
+namespace CleanArchitecture.Infrastructure.DI.Configuration;
 
-public static class RedisConfig
+public static class CacheConfig
 {
     public static void AddRedisConfiguration(this IServiceCollection services, IConfiguration config)
     {

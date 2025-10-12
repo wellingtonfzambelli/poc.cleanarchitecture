@@ -2,9 +2,9 @@
 using Microsoft.AspNetCore.RateLimiting;
 using System.Threading.RateLimiting;
 
-namespace CleanArchitecutre.Presentation.Api.DI.Configuration;
+namespace CleanArchitecutre.Presentation.Api.DI.Services;
 
-public static class RateLimitConfig
+public static class RateLimitServices
 {
     public static void AddRateLimitConfiguration(this IServiceCollection services, IConfiguration config)
     {

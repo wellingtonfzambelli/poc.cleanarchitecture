@@ -1,7 +1,7 @@
 using CleanArchitecture.Application.DI;
 using CleanArchitecture.Infrastructure.DI;
 using CleanArchitecutre.Presentation.Api.DI;
-using CleanArchitecutre.Presentation.Api.DI.Configuration;
+using CleanArchitecutre.Presentation.Api.DI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 IConfiguration _configuration = builder.Configuration;

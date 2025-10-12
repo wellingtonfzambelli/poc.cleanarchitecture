@@ -1,4 +1,4 @@
-﻿using CleanArchitecutre.Presentation.Api.DI.Configuration;
+﻿using CleanArchitecutre.Presentation.Api.DI.Services;
 
 namespace CleanArchitecutre.Presentation.Api.DI;
 
@@ -9,7 +9,7 @@ public static class ServiceExtensions
         services.AddHttpContextAccessor();
         services.AddSwaggerConfiguration();
         services.AddDependencyInjectionConfiguration();
-        //services.AddHealthCheckConfiguration(_configuration);
+        services.AddHealthCheckConfiguration(configuration);
         services.AddRateLimitConfiguration(configuration);
         services.AddCorsConfiguration(configuration);
 

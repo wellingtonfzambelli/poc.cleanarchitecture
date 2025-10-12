@@ -1,9 +1,9 @@
 ﻿using Microsoft.OpenApi.Models;
 using System.Reflection;
 
-namespace CleanArchitecutre.Presentation.Api.DI.Configuration;
+namespace CleanArchitecutre.Presentation.Api.DI.Services;
 
-public static class SwaggerConfig
+public static class SwaggerServices
 {
     public static void AddSwaggerConfiguration(this IServiceCollection services)
     {

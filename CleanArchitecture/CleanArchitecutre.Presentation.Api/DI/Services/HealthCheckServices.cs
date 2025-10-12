@@ -2,9 +2,9 @@
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 
-namespace CleanArchitecutre.Presentation.Api.DI.Configuration;
+namespace CleanArchitecutre.Presentation.Api.DI.Services;
 
-public static class HealthCheckConfig
+public static class HealthCheckServices
 {
     public static void AddHealthCheckConfiguration(this IServiceCollection services, IConfiguration config)
     {

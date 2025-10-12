@@ -6,9 +6,9 @@ using CleanArchitecture.Infrastructure.Repositories.UserAggregate;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CleanArchitecture.Infrastructure.DI.Configuration;
+namespace CleanArchitecture.Infrastructure.DI.Services;
 
-public static class PersistenceConfig
+public static class PersistenceServices
 {
     public static void AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)
     {

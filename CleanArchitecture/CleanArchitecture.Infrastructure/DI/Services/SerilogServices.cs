@@ -3,9 +3,9 @@ using Microsoft.Extensions.Hosting;
 using Serilog;
 using Serilog.Events;
 
-namespace CleanArchitecutre.Presentation.Api.DI.Configuration;
+namespace CleanArchitecture.Infrastructure.DI.Services;
 
-public static class SerilogConfig
+public static class SerilogServices
 {
     public static void AddSerilogConfiguration(this IHostBuilder hostBuilder, string path, IConfiguration config) =>
         hostBuilder.UseSerilog((context, configuration) =>

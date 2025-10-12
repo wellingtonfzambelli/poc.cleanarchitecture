@@ -1,8 +1,8 @@
 ﻿using CleanArchitecture.Infrastructure.Shared;
 
-namespace CleanArchitecutre.Presentation.Api.DI.Configuration;
+namespace CleanArchitecutre.Presentation.Api.DI.Services;
 
-public static class CorsConfig
+public static class CorsServices
 {
     public static void AddCorsConfiguration(this IServiceCollection services, IConfiguration config)
     {

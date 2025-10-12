@@ -3,9 +3,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Redis.OM;
 
-namespace CleanArchitecture.Infrastructure.DI.Configuration;
+namespace CleanArchitecture.Infrastructure.DI.Services;
 
-public static class CacheConfig
+public static class CacheServices
 {
     public static void AddRedisConfiguration(this IServiceCollection services, IConfiguration config)
     {

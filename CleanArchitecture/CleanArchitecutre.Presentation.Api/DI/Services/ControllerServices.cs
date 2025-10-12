@@ -2,9 +2,9 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace CleanArchitecutre.Presentation.Api.DI.Configuration;
+namespace CleanArchitecutre.Presentation.Api.DI.Services;
 
-public static class ControllerConfig
+public static class ControllerServices
 {
     public static void AddControllerConfiguration(this IServiceCollection services)
     {

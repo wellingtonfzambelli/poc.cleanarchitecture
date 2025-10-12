@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CleanArchitecture.Infrastructure.DI.Configuration;
+namespace CleanArchitecture.Infrastructure.DI.Services;
 
-public static class RabbitConfig
+public static class RabbitServices
 {
     public static void AddRabbitConfiguration(this IServiceCollection services, IConfiguration config)
     {

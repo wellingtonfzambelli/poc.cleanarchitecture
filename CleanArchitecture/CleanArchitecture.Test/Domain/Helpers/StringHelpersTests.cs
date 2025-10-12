@@ -90,4 +90,36 @@ public sealed class StringHelpersTests
         // Assert
         Assert.Equal(input, result);
     }
+
+    [Fact]
+    public void EmailValidation_ShouldReturnTrue_ForValidEmail()
+    {
+        // Arrange
+        var faker = new Faker();
+        var validEmail = faker.Internet.Email();
+
+        // Act
+        var result = validEmail.EmailValidation();
+
+        // Assert
+        Assert.True(result);
+    }
+
+    [Theory]
+    [InlineData("")]
+    [InlineData(" ")]
+    [InlineData(null)]
+    [InlineData("invalidemail")]
+    [InlineData("user@domain")]
+    [InlineData("user@@domain.com")]
+    [InlineData("user@domain..com")]
+    [InlineData("user@.com")]
+    public void EmailValidation_ShouldReturnFalse_ForInvalidEmails(string email)
+    {
+        // Act
+        var result = email.EmailValidation();
+
+        // Assert
+        Assert.False(result);
+    }
 }

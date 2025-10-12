@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace CleanArchitecture.Domain.Helpers;
 
@@ -18,7 +19,7 @@ public static class StringHelpers
         if (string.IsNullOrWhiteSpace(texto))
             return texto;
 
-        
+
         var normalized = texto.Normalize(NormalizationForm.FormD);
 
         var sb = new StringBuilder();
@@ -34,5 +35,16 @@ public static class StringHelpers
 
         // Retorna sem acentos e normalizado
         return sb.ToString().Normalize(NormalizationForm.FormC);
+    }
+
+    public static bool EmailValidation(this string email)
+    {
+        if (string.IsNullOrWhiteSpace(email))
+            return false;
+
+        var regex = new Regex(@"^(?!.*\.\.)([A-Za-z0-9._%+-]+)@([A-Za-z0-9.-]+\.[A-Za-z]{2,})$",
+                              RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
+        return regex.IsMatch(email);
     }
 }

@@ -17,7 +17,6 @@ builder.Services.AddInfrastructureServices(_configuration);
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddSwaggerConfiguration();
 builder.Services.AddDependencyInjectionConfiguration();
-builder.Services.AddClientConfiguration(_configuration);
 builder.Services.AddRabbitConfiguration(_configuration);
 //builder.Services.AddHealthCheckConfiguration(_configuration);
 builder.Services.AddRateLimitConfiguration(_configuration);

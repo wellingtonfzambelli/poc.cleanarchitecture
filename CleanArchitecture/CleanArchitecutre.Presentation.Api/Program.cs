@@ -10,9 +10,9 @@ builder.Services.AddHttpContextAccessor();
 string _path = builder.Environment.ContentRootPath;
 IConfiguration _configuration = builder.Configuration;
 
+builder.Services.AddPresentationServices(_configuration);
 builder.Services.AddApplicationServices(_configuration);
 builder.Services.AddInfrastructureServices(_configuration);
-builder.Services.AddPresentationServices(_configuration);
 
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddSwaggerConfiguration();

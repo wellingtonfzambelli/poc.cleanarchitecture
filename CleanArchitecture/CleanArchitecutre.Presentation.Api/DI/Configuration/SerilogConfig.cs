@@ -1,7 +1,7 @@
 ﻿using Serilog;
 using Serilog.Events;
 
-namespace CleanArchitecutre.Presentation.Api.Configuration;
+namespace CleanArchitecutre.Presentation.Api.DI.Configuration;
 
 public static class SerilogConfig
 {

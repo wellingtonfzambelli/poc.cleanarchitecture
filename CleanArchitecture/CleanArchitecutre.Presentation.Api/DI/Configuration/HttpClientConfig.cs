@@ -1,6 +1,6 @@
 ﻿using System.Net.Http.Headers;
 
-namespace CleanArchitecutre.Presentation.Api.Configuration;
+namespace CleanArchitecutre.Presentation.Api.DI.Configuration;
 
 public static class HttpClientConfig
 {

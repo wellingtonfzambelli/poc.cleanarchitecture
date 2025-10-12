@@ -1,4 +1,4 @@
-using CleanArchitecutre.Presentation.Api.Configuration;
+using CleanArchitecutre.Presentation.Api.DI.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 

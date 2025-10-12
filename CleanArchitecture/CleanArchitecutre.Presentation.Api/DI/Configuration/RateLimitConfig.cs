@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.RateLimiting;
 using System.Threading.RateLimiting;
 
-namespace CleanArchitecutre.Presentation.Api.Configuration;
+namespace CleanArchitecutre.Presentation.Api.DI.Configuration;
 
 public static class RateLimitConfig
 {

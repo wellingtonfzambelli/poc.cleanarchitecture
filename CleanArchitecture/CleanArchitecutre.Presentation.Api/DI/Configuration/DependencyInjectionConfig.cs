@@ -7,7 +7,7 @@ using CleanArchitecture.Infrastructure.Repositories.UserAggregate;
 using FluentValidation;
 using MediatR;
 
-namespace CleanArchitecutre.Presentation.Api.Configuration;
+namespace CleanArchitecutre.Presentation.Api.DI.Configuration;
 
 public static class DependencyInjectionConfig
 {

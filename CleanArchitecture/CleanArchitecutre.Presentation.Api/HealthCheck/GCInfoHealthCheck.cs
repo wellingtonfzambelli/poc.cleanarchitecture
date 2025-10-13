@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Options;
 
-namespace CleanArchitecture.Application.HealthCheck;
+namespace CleanArchitecutre.Presentation.Api.HealthCheck;
 
 public sealed class GCInfoHealthCheck : IHealthCheck
 {

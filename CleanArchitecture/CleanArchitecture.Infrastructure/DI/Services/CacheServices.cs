@@ -5,7 +5,7 @@ using Redis.OM;
 
 namespace CleanArchitecture.Infrastructure.DI.Services;
 
-public static class CacheServices
+internal static class CacheServices
 {
     public static void AddRedisConfiguration(this IServiceCollection services, IConfiguration config)
     {

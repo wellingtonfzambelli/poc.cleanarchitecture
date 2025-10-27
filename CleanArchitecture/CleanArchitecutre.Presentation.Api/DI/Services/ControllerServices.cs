@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace CleanArchitecutre.Presentation.Api.DI.Services;
 
-public static class ControllerServices
+internal static class ControllerServices
 {
     public static void AddControllerConfiguration(this IServiceCollection services)
     {

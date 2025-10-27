@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace CleanArchitecture.Infrastructure.Repositories.UserAggregate;
 
-public sealed class UserBuilder : IEntityTypeConfiguration<User>
+internal sealed class UserBuilder : IEntityTypeConfiguration<User>
 {
     public void Configure(EntityTypeBuilder<User> entity)
     {

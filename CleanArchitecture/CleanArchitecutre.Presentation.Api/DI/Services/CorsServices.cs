@@ -2,7 +2,7 @@
 
 namespace CleanArchitecutre.Presentation.Api.DI.Services;
 
-public static class CorsServices
+internal static class CorsServices
 {
     public static void AddCorsConfiguration(this IServiceCollection services, IConfiguration config)
     {

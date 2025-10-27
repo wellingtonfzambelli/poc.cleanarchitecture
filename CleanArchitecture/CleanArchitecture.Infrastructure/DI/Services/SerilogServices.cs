@@ -5,7 +5,7 @@ using Serilog.Events;
 
 namespace CleanArchitecture.Infrastructure.DI.Services;
 
-public static class SerilogServices
+internal static class SerilogServices
 {
     public static void AddSerilogConfiguration(this IHostBuilder hostBuilder, string path, IConfiguration config) =>
         hostBuilder.UseSerilog((context, configuration) =>

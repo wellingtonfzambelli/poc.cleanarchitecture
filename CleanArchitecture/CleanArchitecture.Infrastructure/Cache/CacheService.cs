@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 
 namespace CleanArchitecture.Infrastructure.Cache;
 
-public sealed class CacheService : ICacheService
+internal sealed class CacheService : ICacheService
 {
     private readonly RedisConnectionProvider _provider;
 

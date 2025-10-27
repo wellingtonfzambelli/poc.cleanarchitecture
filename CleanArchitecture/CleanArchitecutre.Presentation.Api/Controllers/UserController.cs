@@ -10,7 +10,7 @@ namespace CleanArchitecutre.Presentation.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public sealed class UserController : CleanArchitectureBaseController
+internal sealed class UserController : CleanArchitectureBaseController
 {
     public UserController(IMediator mediator, ILogger<CleanArchitectureBaseController> logger)
         : base(mediator, logger) { }

@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 
 namespace CleanArchitecture.Application.UseCases.Auth.CreateUser;
 
-public sealed class CreateUserHandler : IRequestHandler<CreateUserCommandDto, CreateUserCommandResponseDto>
+internal sealed class CreateUserHandler : IRequestHandler<CreateUserCommandDto, CreateUserCommandResponseDto>
 {
     private readonly ICacheService _cacheService;
     private readonly IUnitOfWork _unitOfWork;

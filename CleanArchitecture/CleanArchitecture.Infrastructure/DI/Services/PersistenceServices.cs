@@ -8,7 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace CleanArchitecture.Infrastructure.DI.Services;
 
-public static class PersistenceServices
+internal static class PersistenceServices
 {
     public static void AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)
     {

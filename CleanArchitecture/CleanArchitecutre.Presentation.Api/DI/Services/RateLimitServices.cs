@@ -4,7 +4,7 @@ using System.Threading.RateLimiting;
 
 namespace CleanArchitecutre.Presentation.Api.DI.Services;
 
-public static class RateLimitServices
+internal static class RateLimitServices
 {
     public static void AddRateLimitConfiguration(this IServiceCollection services, IConfiguration config)
     {

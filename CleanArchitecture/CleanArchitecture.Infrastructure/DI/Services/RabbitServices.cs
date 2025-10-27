@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace CleanArchitecture.Infrastructure.DI.Services;
 
-public static class RabbitServices
+internal static class RabbitServices
 {
     public static void AddRabbitConfiguration(this IServiceCollection services, IConfiguration config)
     {

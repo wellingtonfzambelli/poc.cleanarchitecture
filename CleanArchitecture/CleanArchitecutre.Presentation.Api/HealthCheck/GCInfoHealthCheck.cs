@@ -3,7 +3,7 @@ using Microsoft.Extensions.Options;
 
 namespace CleanArchitecutre.Presentation.Api.HealthCheck;
 
-public sealed class GCInfoHealthCheck : IHealthCheck
+internal sealed class GCInfoHealthCheck : IHealthCheck
 {
     private readonly IOptionsMonitor<GCInfoOptions> _options;
 

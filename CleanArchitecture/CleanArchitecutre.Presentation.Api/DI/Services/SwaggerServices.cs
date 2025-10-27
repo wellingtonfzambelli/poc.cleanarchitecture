@@ -3,7 +3,7 @@ using System.Reflection;
 
 namespace CleanArchitecutre.Presentation.Api.DI.Services;
 
-public static class SwaggerServices
+internal static class SwaggerServices
 {
     public static void AddSwaggerConfiguration(this IServiceCollection services)
     {

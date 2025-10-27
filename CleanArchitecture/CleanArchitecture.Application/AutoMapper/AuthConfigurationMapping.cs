@@ -3,7 +3,7 @@ using CleanArchitecture.Application.UseCases.Auth.CreateUser;
 
 namespace CleanArchitecture.Application.AutoMapper;
 
-public sealed class AuthConfigurationMapping : Profile
+internal sealed class AuthConfigurationMapping : Profile
 {
     public AuthConfigurationMapping()
     {

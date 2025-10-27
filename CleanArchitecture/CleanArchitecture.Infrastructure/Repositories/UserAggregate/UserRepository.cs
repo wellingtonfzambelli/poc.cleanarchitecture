@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CleanArchitecture.Infrastructure.Repositories.UserAggregate;
 
-public sealed class UserRepository : BaseRepository<User>, IUserRepository
+internal sealed class UserRepository : BaseRepository<User>, IUserRepository
 {
     public UserRepository(CleanArchitectureDbContext context) : base(context)
     { }

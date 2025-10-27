@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace CleanArchitecture.Infrastructure.DI.Services;
 
-public static class SqlDatabaseServices
+internal static class SqlDatabaseServices
 {
     public static void AddSqlServerDatabase(this IServiceCollection services, IConfiguration config)
     {

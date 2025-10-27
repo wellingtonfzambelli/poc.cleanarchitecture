@@ -1,5 +1,5 @@
 using Bogus;
-using CleanArchitecture.Domain.Helpers;
+using CleanArchitecture.Infrastructure.Shared.Helpers;
 
 namespace CleanArchitecture.Test.Domain.Helpers;
 

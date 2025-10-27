@@ -2,7 +2,7 @@
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace CleanArchitecture.Domain.Helpers;
+namespace CleanArchitecture.Infrastructure.Shared.Helpers;
 
 public static class StringHelpers
 {

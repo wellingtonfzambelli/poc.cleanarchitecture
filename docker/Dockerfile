@@ -25,3 +25,14 @@ FROM base AS final
 WORKDIR /app
 COPY --from=build /app/publish .
 ENTRYPOINT ["dotnet", "CleanArchitecture.Presentation.Api.dll"]
+
+
+
+
+
+
+
+                ### For testing execute the following command ###
+
+# docker run --name cleanarch-api-container -p 8085:8080 cleanarch-api-image
+# docker run -d --name cleanarch-api-container -p 8085:8080 cleanarch-api-image

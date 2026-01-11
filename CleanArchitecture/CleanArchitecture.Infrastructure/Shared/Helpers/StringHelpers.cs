@@ -1,5 +1,8 @@
-﻿using System.Globalization;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
+using System.Globalization;
 using System.Text;
+using System.Text.Json;
 using System.Text.RegularExpressions;
 
 namespace CleanArchitecture.Infrastructure.Shared.Helpers;
@@ -46,5 +49,5 @@ public static class StringHelpers
                               RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
         return regex.IsMatch(email);
-    }
+    }    
 }

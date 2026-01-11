@@ -10,7 +10,7 @@ namespace CleanArchitecutre.Presentation.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-internal sealed class UserController : CleanArchitectureBaseController
+public sealed class UserController : CleanArchitectureBaseController
 {
     public UserController(IMediator mediator, ILogger<CleanArchitectureBaseController> logger)
         : base(mediator, logger) { }
@@ -20,7 +20,7 @@ internal sealed class UserController : CleanArchitectureBaseController
     [ProducesResponseType(typeof(ErrorResponseDto), (int)HttpStatusCode.BadRequest)]
     public async Task<IActionResult> CreateUserAsync
     (
-        CreateUserRequestDto request,
+        [FromBody]CreateUserRequestDto request,
         [FromHeader(Name = CorrelationId)][Required] Guid correlationId,
         CancellationToken ct
     )

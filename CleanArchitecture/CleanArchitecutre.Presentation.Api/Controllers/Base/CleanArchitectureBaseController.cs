@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CleanArchitecutre.Presentation.Api.Controllers.Base;
 
-internal abstract class CleanArchitectureBaseController : ControllerBase
+public abstract class CleanArchitectureBaseController : ControllerBase
 {
     protected const string CorrelationId = "correlation-id";
     protected readonly IMediator Mediator;

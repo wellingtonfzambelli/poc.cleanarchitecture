@@ -1,5 +1,5 @@
-﻿using CleanArchitecture.Application.Shared;
-using MediatR;
+﻿using CleanArchitecture.Application.Mediator;
+using CleanArchitecture.Application.Shared;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CleanArchitecutre.Presentation.Api.Controllers.Base;
@@ -7,10 +7,10 @@ namespace CleanArchitecutre.Presentation.Api.Controllers.Base;
 public abstract class CleanArchitectureBaseController : ControllerBase
 {
     protected const string CorrelationId = "correlation-id";
-    protected readonly IMediator Mediator;
+    protected readonly ISender Mediator;
     protected readonly ILogger<CleanArchitectureBaseController> Logger;
 
-    protected CleanArchitectureBaseController(IMediator mediator, ILogger<CleanArchitectureBaseController> logger)
+    protected CleanArchitectureBaseController(ISender mediator, ILogger<CleanArchitectureBaseController> logger)
     {
         Mediator = mediator;
         Logger = logger;

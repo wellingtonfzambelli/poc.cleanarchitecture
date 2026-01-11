@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿using CleanArchitecture.Application.Mediator;
 
 namespace CleanArchitecture.Application.UseCases.Auth.CreateUser;
 

@@ -9,6 +9,7 @@ internal static class ServiceExtensions
         services.AddHttpContextAccessor();
         services.AddSwaggerConfiguration();
         services.AddDependencyInjectionConfiguration();
+        services.AddMediatorService();
         services.AddHealthCheckConfiguration(configuration);
         services.AddRateLimitConfiguration(configuration);
         services.AddCorsConfiguration(configuration);

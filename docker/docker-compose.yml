@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+  api:
+    image: cleanarch-api-image
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: cleanarch-api-container
+    ports:
+      - "8085:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      REDIS__HOST: redis
+      REDIS__PORT: 6379
+    depends_on:
+      - redis
+    networks:
+      - cleanarch-network
+
+  redis:
+    image: redis:7-alpine
+    container_name: cleanarch-redis-container
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-volume:/data
+    command: redis-server --appendonly yes
+    networks:
+      - cleanarch-network
+
+networks:
+  cleanarch-network:
+    driver: bridge
+
+volumes:
+  redis-volume:

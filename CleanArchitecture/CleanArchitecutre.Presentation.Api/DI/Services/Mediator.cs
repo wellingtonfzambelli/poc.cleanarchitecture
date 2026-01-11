@@ -1,7 +1,7 @@
 ﻿using CleanArchitecture.Application.Mediator;
 using System.Reflection;
 
-namespace CleanArchitecutre.Presentation.Api.DI.Services;
+namespace CleanArchitecture.Presentation.Api.DI.Services;
 
 public static class MediatorService
 {

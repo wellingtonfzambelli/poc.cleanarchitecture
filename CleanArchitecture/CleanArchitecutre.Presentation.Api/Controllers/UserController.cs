@@ -1,12 +1,12 @@
 using CleanArchitecture.Application.Mediator;
 using CleanArchitecture.Application.Shared;
 using CleanArchitecture.Application.UseCases.Auth.CreateUser;
-using CleanArchitecutre.Presentation.Api.Controllers.Base;
+using CleanArchitecture.Presentation.Api.Controllers.Base;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 using System.Net;
 
-namespace CleanArchitecutre.Presentation.Api.Controllers;
+namespace CleanArchitecture.Presentation.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]

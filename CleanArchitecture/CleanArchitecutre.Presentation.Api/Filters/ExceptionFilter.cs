@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System.Net;
 
-namespace CleanArchitecutre.Presentation.Api.Filters;
+namespace CleanArchitecture.Presentation.Api.Filters;
 
 internal sealed class ExceptionFilter : IExceptionFilter
 {

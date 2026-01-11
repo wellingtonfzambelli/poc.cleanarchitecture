@@ -1,8 +1,8 @@
-﻿using CleanArchitecutre.Presentation.Api.Filters;
+﻿using CleanArchitecture.Presentation.Api.Filters;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace CleanArchitecutre.Presentation.Api.DI.Services;
+namespace CleanArchitecture.Presentation.Api.DI.Services;
 
 internal static class ControllerServices
 {

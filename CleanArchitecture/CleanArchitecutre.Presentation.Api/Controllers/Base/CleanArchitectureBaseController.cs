@@ -2,7 +2,7 @@
 using CleanArchitecture.Application.Shared;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CleanArchitecutre.Presentation.Api.Controllers.Base;
+namespace CleanArchitecture.Presentation.Api.Controllers.Base;
 
 public abstract class CleanArchitectureBaseController : ControllerBase
 {

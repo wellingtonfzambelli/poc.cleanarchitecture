@@ -1,6 +1,6 @@
-﻿using CleanArchitecutre.Presentation.Api.DI.Services;
+﻿using CleanArchitecture.Presentation.Api.DI.Services;
 
-namespace CleanArchitecutre.Presentation.Api.DI;
+namespace CleanArchitecture.Presentation.Api.DI;
 
 internal static class ServiceExtensions
 {

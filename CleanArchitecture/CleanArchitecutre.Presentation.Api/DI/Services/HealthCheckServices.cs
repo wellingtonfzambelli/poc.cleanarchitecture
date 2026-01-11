@@ -2,7 +2,7 @@
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 
-namespace CleanArchitecutre.Presentation.Api.DI.Services;
+namespace CleanArchitecture.Presentation.Api.DI.Services;
 
 internal static class HealthCheckServices
 {

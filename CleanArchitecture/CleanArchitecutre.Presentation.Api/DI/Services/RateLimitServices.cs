@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.RateLimiting;
 using System.Threading.RateLimiting;
 
-namespace CleanArchitecutre.Presentation.Api.DI.Services;
+namespace CleanArchitecture.Presentation.Api.DI.Services;
 
 internal static class RateLimitServices
 {

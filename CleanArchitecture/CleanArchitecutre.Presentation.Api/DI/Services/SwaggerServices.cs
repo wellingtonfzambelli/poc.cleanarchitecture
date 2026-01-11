@@ -1,7 +1,7 @@
 ﻿using Microsoft.OpenApi.Models;
 using System.Reflection;
 
-namespace CleanArchitecutre.Presentation.Api.DI.Services;
+namespace CleanArchitecture.Presentation.Api.DI.Services;
 
 internal static class SwaggerServices
 {

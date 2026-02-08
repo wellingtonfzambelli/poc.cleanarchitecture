@@ -2,7 +2,7 @@
 
 namespace CleanArchitecture.Domain.Entities.UserAggregate;
 
-public sealed class User : BaseEntity
+public sealed class User : BaseEntityModify
 {
     public User(string name, string email)
     {

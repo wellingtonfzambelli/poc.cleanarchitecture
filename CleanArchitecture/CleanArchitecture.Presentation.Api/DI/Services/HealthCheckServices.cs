@@ -1,5 +1,4 @@
 ﻿using CleanArchitecture.Infrastructure.Shared;
-using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using System.Text.Json;
